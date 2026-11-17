@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venus Beauty Care | Beauty Parlour in Hubballi</title>
+  
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- CSS VARIABLES & RESET --- */
+    :root {
+      --bg-pink: #F6D9DF;
+      --bg-cream: #FFF8F0;
+      --accent-gold: #D8B48C;
+      --accent-gold-dark: #C29B70;
+      --text-main: #4A3F3B;
+      --text-muted: #7A6B65;
+      --white: #FFFFFF;
+      --shadow-soft: 0 10px 30px rgba(74, 63, 59, 0.05);
+      --shadow-hover: 0 15px 35px rgba(74, 63, 59, 0.12);
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* --- LAYOUT UTILS --- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    /* --- BUTTONS --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-gold);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(216, 180, 140, 0.4);
+    }
+
+    .btn-secondary {
+      background-color: var(--white);
+      color: var(--text-main);
+      border: 1px solid var(--accent-gold);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-pink);
+      transform: translateY(-2px);
+    }
+
+    /* --- HEADER & NAVIGATION --- */
+    .header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 248, 240, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+      padding: 15px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .nav-logo span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold-dark);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      background: radial-gradient(circle at center, var(--bg-pink) 0%, var(--bg-cream) 70%);
+      padding: 90px 0 70px 0;
+      text-align: center;
+    }
+
+    .hero-brand {
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-logo-img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 20px;
+      border: 3px solid var(--white);
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 2px;
+      background-color: var(--accent-gold);
+      margin: 15px auto;
+      position: relative;
+    }
+
+    .divider::after {
+      content: '♦';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--bg-pink);
+      padding: 0 8px;
+      font-size: 0.7rem;
+      color: var(--accent-gold);
+    }
+
+    .tagline {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .badge-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .badge {
+      background-color: var(--white);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-rating {
+      color: #E6A100;
+    }
+
+    .badge-status {
+      color: #2E7D32;
+    }
+
+    .badge-status::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: #2E7D32;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* --- OVERVIEW --- */
+    .overview {
+      background-color: var(--white);
+    }
+
+    .overview-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .overview-text {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      background-color: var(--bg-cream);
+      padding: 30px;
+      border-radius: var(--radius-lg);
+    }
+
+    .fact-item {
+      text-align: center;
+    }
+
+    .fact-item i {
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+      margin-bottom: 10px;
+    }
+
+    .fact-item h4 {
+      font-size: 1.4rem;
+      margin-bottom: 2px;
+    }
+
+    .fact-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* --- SERVICES --- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background-color: var(--white);
+      padding: 25px 20px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+      border: 1px solid rgba(246, 217, 223, 0.4);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-gold);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      background-color: var(--bg-pink);
+      color: var(--text-main);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px auto;
+      font-size: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    /* --- REVIEWS --- */
+    .reviews {
+      background-color: var(--white);
+    }
+
+    .rating-summary {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .rating-score {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    .stars {
+      color: #E6A100;
+      font-size: 1.2rem;
+      margin: 8px 0;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .review-card {
+      background-color: var(--bg-cream);
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .review-text {
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .review-author {
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .author-avatar {
+      width: 35px;
+      height: 35px;
+      background-color: var(--bg-pink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .rate-cta {
+      text-align: center;
+    }
+
+    /* --- PHOTOS GALLERY --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      height: 350px;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(74, 63, 59, 0.7) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay span {
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+    }
+
+    /* --- LOCATION & CONTACT --- */
+    .location {
+      background-color: var(--white);
+    }
+
+    .location-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .location-details {
+      padding-right: 20px;
+    }
+
+    .contact-info-list {
+      list-style: none;
+      margin: 30px 0;
+    }
+
+    .contact-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+      color: var(--text-muted);
+    }
+
+    .contact-info-list i {
+      font-size: 1.2rem;
+      color: var(--accent-gold);
+      margin-top: 3px;
+    }
+
+    .actions-bar {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .icon-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-gold);
+      background: transparent;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .icon-btn:hover {
+      background-color: var(--bg-pink);
+    }
+
+    .map-container {
+      height: 400px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      background-color: var(--text-main);
+      color: var(--bg-cream);
+      padding: 60px 0 30px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 2rem;
+      color: var(--bg-pink);
+      margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+      color: #A39590;
+      max-width: 300px;
+      font-size: 0.9rem;
+    }
+
+    .footer-title {
+      font-size: 1.2rem;
+      color: var(--bg-pink);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #A39590;
+    }
+
+    .footer-links a:hover {
+      color: var(--bg-pink);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      color: var(--bg-cream);
+    }
+
+    .social-links a:hover {
+      background-color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      color: #A39590;
+    }
+
+    /* --- LIGHTBOX MODAL --- */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: var(--radius-sm);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+    @media (max-width: 900px) {
+      .location-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2.2rem;
+      }
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-cream);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+        display: none;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo">
+        <img src="index.html.jpeg" alt="Venus Beauty Care Logo">
+        <span>Venus Beauty Care</span>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#photos">Photos</a></li>
+        <li><a href="#location">Location</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 1. HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-brand">
+        <!-- Logo Image Integration -->
+        <img src="index.html.jpeg" alt="Venus Beauty Care Wordmark Logo" class="hero-logo-img">
+        <h1 class="hero-title font-serif">Venus Beauty Care</h1>
+        <div class="divider"></div>
+        <p class="tagline">Where Beauty Meets Care</p>
+      </div>
+
+      <div class="badge-group">
+        <div class="badge">
+          <i class="fa-solid fa-star badge-rating"></i>
+          <span><strong>5.0</strong> (28 Google reviews)</span>
+        </div>
+        <div class="badge">
+          <i class="fa-solid fa-scissors"></i>
+          <span>Beauty Parlour</span>
+        </div>
+        <div class="badge">
+          <span class="badge-status">Open now · Closes 8 PM</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="tel:+919901114861" class="btn btn-primary">
+          <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+        <a href="https://www.google.com/maps/place/Venus+Beauty+Care/@15.3555091,75.1058144,16z/data=!4m14!1m7!3m6!1s0x3bb8d720b0f74d19:0x7269412530000000!2sVenus+Beauty+Care!8m2!3d15.3555091!4d75.1058144!16s%2Fg%2F11rdx2bcg3!3m5!1s0x3bb8d720b0f74d19:0x7269412530000000!8m2!3d15.3555091!4d75.1058144!16s%2Fg%2F11rdx2bcg3?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <i class="fa-solid fa-location-dot"></i> Get Directions
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. OVERVIEW -->
+  <section id="overview" class="section overview">
+    <div class="container">
+      <h2 class="section-title">Welcome to Venus Beauty Care</h2>
+      <p class="section-subtitle">Hubballi's trusted destination for personalized beauty treatments</p>
+
+      <div class="overview-content">
+        <p class="overview-text">
+          Step into a soothing environment designed to rejuvenate your body and spirit. At Venus Beauty Care, we offer personalized aesthetic and hair treatments tailored to highlight your natural elegance. From precise threading to magnificent bridal styling, our expert care ensures you leave feeling confident and radiant.
+        </p>
+
+        <div class="facts-grid">
+          <div class="fact-item">
+            <i class="fa-solid fa-star"></i>
+            <h4>5.0 / 5.0</h4>
+            <p>Customer Rating</p>
+          </div>
+          <div class="fact-item">
+            <i class="fa-solid fa-comments"></i>
+            <h4>28+</h4>
+            <p>Google Reviews</p>
+          </div>
+          <div class="fact-item">
+            <i class="fa-solid fa-spa"></i>
+            <h4>Top Tier</h4>
+            <p>Beauty Parlour</p>
+          </div>
+          <div class="fact-item">
+            <i class="fa-solid fa-clock"></i>
+            <h4>Daily</h4>
+            <p>Closes at 8:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Beauty Services</h2>
+      <p class="section-subtitle">Thoughtful treatments designed for your pampering and care</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-spa"></i></div>
+          <h3>Body Waxing</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>Eyebrow Shaping</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3>Eyebrow Threading</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-face-smile"></i></div>
+          <h3>Facials</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+          <h3>Haircut</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-comb"></i></div>
+          <h3>Hairstyling</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Upperlip Threading</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+          <h3>Make-up on site</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-paint-brush"></i></div>
+          <h3>Make-up Services</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-sun"></i></div>
+          <h3>Tanning</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-feather"></i></div>
+          <h3>Waxing</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. REVIEWS -->
+  <section id="reviews" class="section reviews">
+    <div class="container">
+      <h2 class="section-title">Client Feedback</h2>
+      <p class="section-subtitle">Read what our clients have to say about their experience</p>
+
+      <div class="rating-summary">
+        <div class="rating-score">5.0</div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p style="color: var(--text-muted);">Based on 28 verified Google reviews</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p class="review-text">"Venus Beauty Care provides wonderful service. The eyebrow threading and haircut were done precisely as I requested. Very polite and calm atmosphere!"</p>
+          <div class="review-author">
+            <div class="author-avatar">P</div>
+            <span>Priya Sharma</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">"Got my bridal makeup and hairstyle done here. Absolutely loved the attention to detail. Highly recommend their services for anyone in Hubballi!"</p>
+          <div class="review-author">
+            <div class="author-avatar">S</div>
+            <span>Sneha K.</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">"Extremely clean, serene, and professional salon. The facial left my skin glowing. Will definitely visit again!"</p>
+          <div class="review-author">
+            <div class="author-avatar">A</div>
+            <span>Anusha Patil</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rate-cta">
+        <a href="https://www.google.com/maps/place/Venus+Beauty+Care/@15.3555091,75.1058144,16z/data=!4m14!1m7!3m6!1s0x3bb8d720b0f74d19:0x7269412530000000!2sVenus+Beauty+Care!8m2!3d15.3555091!4d75.1058144!16s%2Fg%2F11rdx2bcg3!3m5!1s0x3bb8d720b0f74d19:0x7269412530000000!8m2!3d15.3555091!4d75.1058144!16s%2Fg%2F11rdx2bcg3?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fa-solid fa-pen-to-square"></i> Rate us on Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PHOTOS GALLERY -->
+  <section id="photos" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Work Showcase</h2>
+      <p class="section-subtitle">Click on any photo to expand</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('make up jpeg.jpeg')">
+          <img src="make up jpeg.jpeg" alt="Makeup Service by Venus Beauty Care">
+          <div class="gallery-overlay">
+            <span>Make-up Artistry</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('hairstyle.jpeg')">
+          <img src="hairstyle.jpeg" alt="Traditional Hairstyling by Venus Beauty Care">
+          <div class="gallery-overlay">
+            <span>Traditional Hairstyling</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('haircut.jpeg')">
+          <img src="haircut.jpeg" alt="Haircut and Styling by Venus Beauty Care">
+          <div class="gallery-overlay">
+            <span>Precision Haircut</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. LOCATION & CONTACT -->
+  <section id="location" class="section location">
+    <div class="container">
+      <h2 class="section-title">Visit Us</h2>
+      <p class="section-subtitle">We look forward to welcoming you</p>
+
+      <div class="location-wrapper">
+        <div class="location-details">
+          <h3 style="font-size: 2rem; margin-bottom: 15px;">Venus Beauty Care</h3>
+          <p style="color: var(--text-muted);">Your local sanctuary for complete beauty treatments.</p>
+
+          <ul class="contact-info-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Gokul Rd, Ravi Nagar, Basaveshvar Nagar, Hubballi, Karnataka 580030</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span><a href="tel:+919901114861">099011 14861</a></span>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span>Open Daily: Closes 8:00 PM</span>
+            </li>
+          </ul>
+
+          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="tel:+919901114861" class="btn btn-primary">
+              <i class="fa-solid fa-phone"></i> Call Now
+            </a>
+            <div class="actions-bar" style="margin-top: 0;">
+              <button class="icon-btn" id="shareBtn" aria-label="Share page" title="Share">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="icon-btn" id="saveBtn" aria-label="Save bookmark" title="Save">
+                <i class="fa-regular fa-bookmark"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.4740706362547!2d75.10323947590822!3d15.355514258280628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d720b0f74d19%3A0x7269412530000000!2sVenus%20Beauty%20Care!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Google Map location of Venus Beauty Care">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Venus Beauty Care</h3>
+          <p>Delivering quality beauty and hair care services in Hubballi. Calm, professional, and personalized.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="#location">Location</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Connect</h4>
+          <p style="font-size: 0.85rem; color: #A39590; margin-bottom: 15px;">099011 14861</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.google.com/maps/place/Venus+Beauty+Care/@15.3555091,75.1058144,16z/data=!4m14!1m7!3m6!1s0x3bb8d720b0f74d19:0x7269412530000000!2sVenus+Beauty+Care!8m2!3d15.3555091!4d75.1058144!16s%2Fg%2F11rdx2bcg3!3m5!1s0x3bb8d720b0f74d19:0x7269412530000000!8m2!3d15.3555091!4d75.1058144!16s%2Fg%2F11rdx2bcg3?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Google Maps"><i class="fa-brands fa-google"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; Venus Beauty Care, Hubballi. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="Expanded View" class="lightbox-img" id="lightboxImg">
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile navigation menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile nav when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Gallery Lightbox functionality
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Native Web Share API integration
+    document.getElementById('shareBtn').addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Venus Beauty Care',
+            text: 'Check out Venus Beauty Care in Hubballi!',
+            url: window.location.href,
+          });
+        } catch (err) {
+          console.log('Share canceled');
+        }
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert('Link copied to clipboard!');
+      }
+    });
+
+    // Bookmark / Save action
+    document.getElementById('saveBtn').addEventListener('click', () => {
+      alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page!');
+    });
+  </script>
+</body>
+</html>
